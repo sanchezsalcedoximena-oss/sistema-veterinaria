@@ -1,11 +1,11 @@
-# Usar imagen con Java 17
-FROM openjdk:17-jdk-slim
+# Imagen oficial moderna de Java 17
+FROM eclipse-temurin:17-jdk
 
-# Copiar el jar generado
+# Copiar el jar
 COPY target/*.jar app.jar
 
-# Puerto (Render usa variable PORT)
+# Puerto
 EXPOSE 8080
 
-# Ejecutar la app
+# Ejecutar app
 ENTRYPOINT ["java","-jar","/app.jar"]
